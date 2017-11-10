@@ -1,0 +1,41 @@
+// Colours
+
+$body: #4caf50;
+$primary: #087f23;
+$secondary: #80e27e;
+$accent: #ffea00;
+
+$darkGrey: #222;
+$mediumGrey: #4a4a4a;
+$lightGrey: #6e6e6e;
+
+$lightText: #fff;
+
+
+// MQs
+
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == "smallPhone" {
+		@media (max-width: 320px) {
+			@content;
+		}
+}
+
+	@else if $breakpoint == "phone" {
+		@media (max-width: 500px) {
+			@content;
+		}
+}
+
+	@else if $breakpoint == "tablet" {
+		@media (max-width: 880px) {
+			@content;
+		}
+	}
+
+	@else {
+		@media ($breakpoint) {
+			@content;
+		}
+	}
+}
